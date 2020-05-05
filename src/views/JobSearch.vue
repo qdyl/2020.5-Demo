@@ -29,14 +29,18 @@
     <section class="commonSearch" v-for="item in totalList" :Key="item.id">
       <div class="searchType">
         {{item.type}}
-        <span class="right-text" v-if="item.showClear" @click="onClickClear(item['id'])">清除搜索</span>
+        <span
+          class="right-text"
+          v-if="item.showClear"
+          @click="onClickClear(item['id'])"
+        >清除搜索</span>
       </div>
       <ul class="searchList">
         <li
           class="list-item"
-          v-for="(sub,i) in item.list"
-          :key="i"
-          @click="onClickCheckItem(totalList['id'])"
+          v-for="(sub) in item.list"
+          :key="sub"
+          @click="onClickCheckItem(sub,item.id)"
         >{{sub}}</li>
       </ul>
     </section>
@@ -49,38 +53,68 @@ export default {
   data() {
     return {
       value: "",
-      totalList:[
-          {id:10,type:'历史搜索',showClear:true,list:["运维人员"]},
-          {id:11,type:'热门搜索',showClear:false,list:["财务经理","设计师", "销售","会计","行政专员","保洁员","洗碗工" ]}
+      totalList: [
+        { id: 10, type: "历史搜索", showClear: true, list: ["运维人员","测试人员","秘书","运输员","快递员","配送员"] },
+        {
+          id: 11,
+          type: "热门搜索",
+          showClear: false,
+          list: [
+            "财务经理",
+            "设计师",
+            "销售",
+            "会计",
+            "行政专员",
+            "保洁员",
+            "洗碗工"
+          ]
+        }
       ]
     };
   },
+  created() {
+    this.compuTotalList(5,8);
+  },
+  computed: {
+    
+  },
   methods: {
+    // 数据的处理
+    compuTotalList(n1,n2) {
+      this.totalList.map(item => {
+        if (item.id === 10) {
+          item.list = item.list.slice(0, n1);
+        } else if (item.id === 11) {
+          item.list = item.list.slice(0, n2);
+        }
+      });
+    },
     onClickLeft() {
-      this.$router.push({-
+      this.$router.push({
         path: "/"
       });
     },
     onSearch() {},
     // 清除历史
-    onClickClear(id){
-         let a = this.totalList.filter(item=>item.id===id);
-        let b = this.totalList.filter(function(item){
-            return item.id === id
-        })
-        let c = Array.prototype.filter.call(this.totalList,(item)=>item.id === id)
-        console.log(a,id,b);
-        console.log(c)
+    onClickClear(id) {
+      this.totalList.filter(item => item.id === id)[0].list = [];
     },
-
-        
-        
     // 点选
-    onClickCheckItem(e){
-        console.log(e)
-        console.log(this)
-        // this.value = e.target.innerText;
-
+    onClickCheckItem(subValue, id) {
+        debugger
+      if(this.value !== subValue){
+        this.value = subValue;
+      }
+      if (id === 11) {
+        let oldHistoryList = this.totalList.filter(item => item.id === 10)[0].list;
+        let histotyLiST = oldHistoryList;
+        if (histotyLiST.indexOf(subValue) === -1) {
+          histotyLiST.unshift(subValue);
+        }
+        // Todo： 这里为啥不能使用 oldHistoryList替换呢。
+        this.totalList.filter(item => item.id === 10)[0].list = histotyLiST;
+        this.compuTotalList(5,8)
+      }
     }
   }
 };
@@ -123,6 +157,9 @@ export default {
       background-color: #31c2bd;
       color: #fff;
       border-radius: 5px;
+    }
+    .van-nav-bar .van-icon{
+        color: #fff;
     }
   }
   //   搜索

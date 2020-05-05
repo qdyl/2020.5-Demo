@@ -1,7 +1,7 @@
 <template>
   <section class="jobList-wrap">
     <ul class="jobList">
-      <li class="job-item-li" v-for="item in jobList" :key="item.Recruitment">
+      <li class="job-item-li" v-for="item in jobList" :key="item.id" @click="fnClickToJobDetail(item.id)">
         <div class="job-item">
           <div class="jobName">
             <strong class="name">{{item.name}}</strong>
@@ -36,6 +36,7 @@ export default {
     return {
       jobList: [
         {
+          id:11,
           name: "生产操作工",
           status: "急聘",
           salary: "2500/月",
@@ -50,6 +51,7 @@ export default {
           companyAdvantge: ["工作服", "包住", "节日福利", "全勤奖"]
         },
         {
+          id:12,
           name: "工艺员",
           status: "急聘",
           salary: "面议",
@@ -64,6 +66,7 @@ export default {
           companyAdvantge: ["工作服", "包住", "节日福利", "全勤奖"]
         },
         {
+          id:13,
           name: "工艺员",
           status: "急聘",
           salary: "面议",
@@ -78,6 +81,7 @@ export default {
           companyAdvantge: ["工作服", "探亲假", "包住", "包吃"]
         },
         {
+          id:14,
           name: "中职数学教师",
           status: "急聘",
           salary: "面议",
@@ -92,6 +96,7 @@ export default {
           companyAdvantge: ["工作服", "出国机会", "寒暑假", "包吃"]
         },
         {
+          id:15,
           name: "研发工程师",
           status: "急聘",
           salary: "6000-9000元/月",
@@ -105,8 +110,19 @@ export default {
           companyName: "湖南和广生物科技有限公司",
           companyAdvantge: ["工作服", "出国机会", "寒暑假", "包吃"]
         }
-      ]
+      ],
+      isEnterJobDetail:true,
     };
+  },
+  methods:{
+    fnClickToJobDetail(id){
+      if(this.isEnterJobDetail){
+        this.$router.push({
+          path:'/jobDetail',
+          query:{id:id}
+        })
+      }
+    }
   }
 };
 </script>
