@@ -116,6 +116,7 @@ export default {
   },
   methods:{
     fnClickToJobDetail(id){
+      console.log('测试')
       if(this.isEnterJobDetail){
         this.$router.push({
           path:'/jobDetail',
