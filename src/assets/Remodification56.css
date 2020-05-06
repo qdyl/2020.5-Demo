@@ -1,0 +1,135 @@
+/* 2020.05.06样式调整 */
+/* 浅色值：#87b87f   , 替换为 #3cbe27*/    
+/* 深色值：#54894a  修改为 #1e8f09*/
+
+/* 第一：头部导航栏：背景色 */
+.navbar {
+    background: #1e8f09;
+}
+/* 查看任务 */
+.ace-nav>li.grey>a {
+    background-color: #66b1ff;
+}
+.ace-nav>li.grey>a:hover, .ace-nav>li.grey>a:focus {
+    background-color: #409eff;
+}
+/* 查看通知 */
+.ace-nav>li>a {
+    background-color: #85ce61;
+}
+.ace-nav>li>a:hover, .ace-nav>li>a:focus {
+    background-color: #67c23a;
+}
+/* 查看邮件 */
+.ace-nav>li.green>a {
+    background-color: #FF9966;
+}
+.ace-nav>li.green>a:hover, .ace-nav>li.green>a:focus {
+    background-color: #ff874a;
+}
+/* 欢迎你 */
+.ace-nav>li.light-blue>a {
+    background-color: #80beff;
+}
+/* 锁定屏幕 */
+.ace-nav>li.light-purple>a {
+    background-color: #f189bd;
+}
+.ace-nav>li.light-purple>a:hover, .ace-nav>li.light-purple>a:focus {
+    background-color: #e47db0;
+}
+/* 重新登录 */
+.ace-nav>li.purple>a {
+    background-color: #457db6;
+}
+.ace-nav>li.purple>a:hover, .ace-nav>li.purple>a:focus {
+    background-color: #336699;
+}
+
+/* 第二：工具栏： */
+/* 1、显示或隐藏侧边栏 */
+.btn-primary, .btn-primary:focus {
+    background-color: #CCCC33!important;
+    border-color: #CCCC33;
+}
+.btn-primary:hover, .open .btn-primary.dropdown-toggle {
+    background-color: #bdbd2b!important;
+    border-color: #CCCC33;
+}
+/* 3、显示或隐藏搜索侧边栏 */
+.btn-purple, .btn-purple:focus {
+    background-color: #CCCC33!important;
+    border-color: #CCCC33;
+}
+.btn-purple:hover, .open .btn-purple.dropdown-toggle {
+    background-color: #bdbd2b!important;
+    border-color: #CCCC33;
+}
+/* 6、打开标签页管理 */
+.btn-warning, .btn-warning:focus {
+    background-color: #FFCC00!important;
+    border-color: #FFCC00;
+}
+.btn-warning:hover, .open .btn-warning.dropdown-toggle {
+    background-color: #e6b572!important;
+    border-color: #FFCC00;
+}
+
+
+/* 第三：侧边栏：背景颜色 */
+.nav-list>li>a {
+    background-color: #e4fee0; 
+}
+.nav-list>li>a:hover {
+    color: #1e8f09;
+}
+#menu-ul {
+    background-color: rgba(255,255,255,.1);
+}
+.nav-list>li .submenu>li a>[class*="icon-"]:first-child {
+    background-color: rgba(255,255,255,.1);
+}
+
+/* 第四： */
+/* 1、'功能菜单'这一层级样式 */
+.nav-list>li.open>a { 
+    color: #1e8f09;
+}
+.label-info, .badge-info {
+    background-color: #1e8f09!important;
+}
+.nav-list>li a:hover>.arrow, .nav-list>li.active>a>.arrow, .nav-list>li.open>a>.arrow {
+    color: #1e8f09;
+}
+.nav-list>li>a:hover:before {
+    background-color: #1e8f09;
+}
+.nav-list>li>a:focus {
+    color: #1e8f09;
+}
+
+/* 2、“内容管理子系统” 这一层级的样式 */
+a.menu {
+    color: #3cbe27 !important;
+}
+.nav-list>li .submenu>li>a:hover {
+    color: #3cbe27;
+}
+.nav-list>li>.submenu li.open>a {
+    color: #1e8f09;
+}
+/* 特殊 */
+.nav-list>li>.submenu li>.submenu li.open>a {
+    color: #1e8f09;
+}
+.nav-list>li>.submenu li>.submenu>li a {
+    color: #3cbe27;
+}
+.nav-list>li>.submenu li>.submenu>li a:hover {
+    color: #1e8f09;
+}
+
+/* 3、“栏目管理”这一层级的样式 */
+.nav-list>li>.submenu li>.submenu>li a:hover [class*="icon-"] {
+    color: #1e8f09;
+}

@@ -101,7 +101,7 @@ export default {
     },
     // 点选
     onClickCheckItem(subValue, id) {
-        debugger
+        // debugger
       if(this.value !== subValue){
         this.value = subValue;
       }

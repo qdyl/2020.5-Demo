@@ -12,7 +12,7 @@
     <ul class="checkBox">
       <li class="check-item">
         <div class="item-div">
-          <span class="item-tit">区域是</span>
+          <span class="item-tit">区域</span>
         </div>
       </li>
       <li class="check-item">
@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  prop:['city'],
   data() {
     return {
       value: ""

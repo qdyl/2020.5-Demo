@@ -111,12 +111,14 @@ export default {
           companyAdvantge: ["工作服", "出国机会", "寒暑假", "包吃"]
         }
       ],
-      isEnterJobDetail:true,
+      isEnterJobDetail:false,
     };
+  },
+  created(){
+
   },
   methods:{
     fnClickToJobDetail(id){
-      console.log('测试')
       if(this.isEnterJobDetail){
         this.$router.push({
           path:'/jobDetail',
